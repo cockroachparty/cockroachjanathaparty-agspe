@@ -2,6 +2,11 @@
 
 ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=cockroachparty.cockroachjanathaparty-agspe) ![GitHub Repo views](https://komarev.com/ghpvc/?username=cockroachparty&repo=cockroachjanathaparty-agspe&color=blue) ![Website](https://img.shields.io/website?url=https%3A%2F%2Fcockroachjanathaparty-agspe.vercel.app&label=Live%20Site&style=for-the-badge) ![GitHub stars](https://img.shields.io/github/stars/cockroachparty/cockroachjanathaparty-agspe?style=social) ![GitHub forks](https://img.shields.io/github/forks/cockroachparty/cockroachjanathaparty-agspe?style=social)
 
+## Available Languages
+- [English](#)
+- [Hindi](README_hindi.md)
+
+
 > An open-source automated intelligence platform developed under the broader research and transparency ethos associated with the Cockroach Janta Party movement — focused on ingesting public data about the Adani Group ecosystem, validating information through a multi-tier cross-source protocol, and generating probabilistic predictions on future business moves with confidence scores and timelines.
 
 Inspired by the satirical anti-corruption and transparency-oriented political culture associated with the Cockroach Janta Party, AGSPE emphasizes open data analysis, source transparency, public accountability, and verifiable intelligence workflows built entirely on publicly available information.
