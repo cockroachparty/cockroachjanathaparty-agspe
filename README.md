@@ -1,10 +1,33 @@
 # AGSPE — Adani Group Strategic Prediction Engine
 
-> An open-source automated intelligence platform that ingests public data about the Adani Group ecosystem, validates information through a multi-tier cross-source protocol, and generates probabilistic predictions on future business moves with confidence scores and timelines.
+> An open-source automated intelligence platform developed under the broader research and transparency ethos associated with the Cockroach Janta Party movement — focused on ingesting public data about the Adani Group ecosystem, validating information through a multi-tier cross-source protocol, and generating probabilistic predictions on future business moves with confidence scores and timelines.
 
-**Repository:** [https://github.com/cockroachparty/cockroachjanathaparty-agspe](https://github.com/cockroachparty/cockroachjanathaparty-agspe)
+Inspired by the satirical anti-corruption and transparency-oriented political culture associated with the Cockroach Janta Party, AGSPE emphasizes open data analysis, source transparency, public accountability, and verifiable intelligence workflows built entirely on publicly available information.
+
+> Yeh Website pakka chalta hai 😅😝
+
+**Live website:** [https://cockroachjanathaparty-agspe.vercel.app/](https://cockroachjanathaparty-agspe.vercel.app/) 
 
 ---
+
+## Vision
+
+AGSPE is designed as a public-interest analytical platform that combines:
+
+Open-source intelligence (OSINT)
+Cross-source validation
+Bias-aware scoring systems
+Public financial analysis
+Transparent probabilistic forecasting
+
+The project reflects the broader Cockroach Janta Party philosophy of:
+
+decentralized public scrutiny,
+anti-corruption transparency,
+open civic technology,
+and accessible investigative tooling.
+
+AGSPE does not claim insider access, privileged information, or political affiliation with any corporate or governmental entity. All analysis is derived from publicly accessible datasets, regulatory filings, news archives, and algorithmic inference models.
 
 ## Features
 
@@ -20,6 +43,18 @@
 
 ---
 
+## Core Principles
+| Principle         | Description                                                                             |
+| ----------------- | --------------------------------------------------------------------------------------- |
+| Transparency      | Every prediction includes validation metadata, source weighting, and confidence scoring |
+| Public Data Only  | No private databases, leaks, or unauthorized access                                     |
+| Open Verification | Claims are cross-checked across independent media and regulatory filings                |
+| Bias Awareness    | Source weighting and contradiction detection are visible to users                       |
+| Civic Technology  | Built as a public-interest research platform using open-source infrastructure           |
+| Explainability    | Prediction logic and scoring models are documented and auditable                        |
+
+
+
 ## Tech Stack
 
 | Layer | Technology |
@@ -34,6 +69,38 @@
 | CI/CD | GitHub Actions (3 workflows) |
 
 ---
+
+## Why This Exists
+
+AGSPE emerged from the idea that:
+
+- large corporate ecosystems increasingly influence public infrastructure, energy, logistics, finance, and policy,
+- public understanding of these systems often depends on fragmented reporting,
+- and open-source analytical tooling can help researchers, journalists, students, and citizens better understand systemic corporate behavior patterns.
+
+The platform therefore attempts to:
+
+- aggregate dispersed public information,
+- validate claims through weighted-source verification,
+- identify recurring strategic patterns,
+- and present findings in an auditable and transparent manner.
+
+## Research Orientation
+
+The project draws inspiration from:
+
+- OSINT methodologies,
+- investigative journalism workflows,
+- financial risk analysis systems,
+- civic-tech transparency initiatives,
+- and decentralized open research communities.
+
+AGSPE is intentionally structured so that:
+
+- all scoring logic is inspectable,
+- all datasets can be audited,
+- all source weighting rules are visible,
+- and all predictions remain probabilistic rather than deterministic.
 
 ## Quick Start
 
@@ -393,7 +460,19 @@ See `.env.example` for the full list. **None are required** for Vercel deploymen
 
 ## Disclaimer
 
-This project is for **informational and research purposes only**. It does not constitute financial advice, investment recommendations, or insider information. All data is derived from publicly available sources. Predictions are probabilistic estimates based on historical patterns and should not be used as the sole basis for any financial or business decision.
+This project is for informational, educational, and research purposes only.
+
+AGSPE does not provide:
+
+- investment advice,
+- legal advice,
+- insider information,
+- political endorsements,
+- or financial recommendations.
+
+All predictions are probabilistic estimates derived from publicly available information and historical pattern analysis. Users should independently verify all findings before making business, legal, political, or financial decisions.
+
+The project reflects open-source civic-tech and transparency ideals associated with the Cockroach Janta Party ecosystem, but operates as an independent research and software initiative.
 
 ---
 
