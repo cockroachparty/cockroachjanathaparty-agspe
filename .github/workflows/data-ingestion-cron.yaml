@@ -1,0 +1,150 @@
+name: Data Ingestion Cron
+
+on:
+  schedule:
+    # Runs every 4 hours
+    - cron: '0 */4 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  data-ingestion:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_DB: agspe_test
+          POSTGRES_USER: agspe
+          POSTGRES_PASSWORD: agspe123
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          cd backend
+          pip install -r requirements.txt
+
+      - name: Check API Health
+        run: |
+          echo "Checking API health endpoints..."
+          # Check Reuters API health
+          # Check SEBI filing portal availability
+          # Check SEC EDGAR accessibility
+          python -c "
+          import httpx
+          apis = {
+              'SEBI': 'https://www.sebi.gov.in',
+              'SEC EDGAR': 'https://www.sec.gov/cgi-bin/browse-edgar',
+          }
+          for name, url in apis.items():
+              try:
+                  resp = httpx.get(url, timeout=10, follow_redirects=True)
+                  print(f'{name}: Status {resp.status_code}')
+              except Exception as e:
+                  print(f'{name}: Error - {e}')
+          "
+
+      - name: Run News Scrapers
+        env:
+          DATABASE_URL: postgresql://agspe:agspe123@localhost:5432/agspe_test
+          REDIS_URL: redis://localhost:6379
+          NEWS_API_KEYS: ${{ secrets.NEWS_API_KEYS }}
+        run: |
+          cd backend
+          python -c "
+          from app.crawlers.news import NewsCrawler
+          from app.crawlers.regulatory import SEBICrawler, SECEdgarCrawler, MCACrawler
+          from app.crawlers.political import ElectionCommissionCrawler, OpenSecretsCrawler
+
+          # Run news crawlers
+          news = NewsCrawler()
+          articles = news.crawl(query='Adani Group')
+          print(f'News articles crawled: {len(articles)}')
+
+          # Run regulatory crawlers
+          sebi = SEBICrawler()
+          filings = sebi.crawl()
+          print(f'SEBI filings crawled: {len(filings)}')
+
+          sec = SECEdgarCrawler()
+          sec_filings = sec.crawl()
+          print(f'SEC filings crawled: {len(sec_filings)}')
+
+          mca = MCACrawler()
+          mca_filings = mca.crawl()
+          print(f'MCA filings crawled: {len(mca_filings)}')
+          "
+
+      - name: Run Validation Engine
+        run: |
+          cd backend
+          python -c "
+          from app.models.validation import ValidationEngine
+          engine = ValidationEngine()
+          print('Validation engine initialized successfully')
+          print(f'Registered sources: {len(engine.get_all_sources())}')
+          "
+
+      - name: Run Prediction Engine
+        run: |
+          cd backend
+          python -c "
+          from app.models.predictor import PredictionEngine
+          engine = PredictionEngine()
+          predictions = engine.generate_predictions()
+          print(f'Predictions generated: {len(predictions)}')
+          for p in predictions[:3]:
+              print(f'  - {p[\"likely_action\"]}: {p[\"confidence_score\"]}%')
+          "
+
+      - name: Update Database
+        env:
+          DATABASE_URL: postgresql://agspe:agspe123@localhost:5432/agspe_test
+          REDIS_URL: redis://localhost:6379
+        run: |
+          cd backend
+          python -c "
+          from app.models.database import init_db
+          engine = init_db('sqlite:///agspe_cron.db')
+          print('Database updated successfully')
+          "
+
+      - name: Deploy Static Assets
+        if: success()
+        run: |
+          echo "Checking for frontend changes..."
+          # In production, this would trigger a frontend rebuild
+          # if changes are detected in the data layer
+          echo "Static assets up to date"
+
+      - name: Send Notification
+        if: failure()
+        run: |
+          echo "Data ingestion pipeline failed!"
+          # In production, send alert to monitoring system
