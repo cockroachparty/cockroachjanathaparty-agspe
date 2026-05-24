@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+	 viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
+<defs>
+  <style type="text/css">
+    .bg{fill:#0f172a;stroke:#10b981;stroke-width:0.5;stroke-miterlimit:10;}
+    .fg{fill:#10b981;}
+    .fg2{fill:#34d399;}
+  </style>
+</defs>
+<g>
+  <path class="bg" d="M24.51,28.51H5.49c-2.21,0-4-1.79-4-4V5.49c0-2.21,1.79-4,4-4h19.03c2.21,0,4,1.79,4,4v19.03
+    C28.51,26.72,26.72,28.51,24.51,28.51z"/>
+  <!-- A letterform for AGSPE -->
+  <path class="fg" d="M15,6l-5,14h2.5l1-3h5l1,3H22L17,6H15z M14.8,14.5L16,10.5l1.2,4H14.8z"/>
+  <!-- Shield accent -->
+  <path class="fg2" d="M8,8l2,1v3l-2,1V8z M20,8l2,1v3l-2,1V8z"/>
+  <!-- Dot accent -->
+  <circle class="fg2" cx="15" cy="23" r="1.5"/>
+</g>
+</svg>
