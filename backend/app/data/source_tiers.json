@@ -1,0 +1,47 @@
+{
+  "tier_1_high_weight": {
+    "weight": 0.9,
+    "description": "International / Highly Credible Sources",
+    "sources": {
+      "Reuters": {"url": "https://www.reuters.com", "type": "International News Agency"},
+      "AP News": {"url": "https://apnews.com", "type": "International News Agency"},
+      "BBC": {"url": "https://www.bbc.com", "type": "International Broadcaster"},
+      "Al Jazeera": {"url": "https://www.aljazeera.com", "type": "International News Network"},
+      "OCCRP": {"url": "https://www.occrp.org", "type": "Investigative Journalism"},
+      "Bloomberg": {"url": "https://www.bloomberg.com", "type": "Financial News"},
+      "Financial Times": {"url": "https://www.ft.com", "type": "Financial News"}
+    }
+  },
+  "tier_2_medium_weight": {
+    "weight": 0.7,
+    "description": "Independent Indian Media",
+    "sources": {
+      "The Hindu": {"url": "https://www.thehindu.com", "type": "National Daily"},
+      "Scroll.in": {"url": "https://scroll.in", "type": "Digital News"},
+      "The Wire": {"url": "https://thewire.in", "type": "Digital News"},
+      "Business Standard": {"url": "https://www.business-standard.com", "type": "Business Daily"},
+      "Economic and Political Weekly": {"url": "https://www.epw.in", "type": "Academic Journal"},
+      "NDTV Profit": {"url": "https://www.ndtv.com/profit", "type": "Business News"}
+    }
+  },
+  "tier_3_low_weight": {
+    "weight": 0.3,
+    "description": "Pro-Group / Requires Verification",
+    "sources": {
+      "NDTV": {"url": "https://www.ndtv.com", "type": "National Broadcaster", "tag": "Requires Verification"},
+      "Times Now": {"url": "https://www.timesnownews.com", "type": "National Broadcaster", "tag": "Requires Verification"},
+      "Republic TV": {"url": "https://www.republicworld.com", "type": "National Broadcaster", "tag": "Requires Verification"},
+      "Zee News": {"url": "https://zeenews.india.com", "type": "National Broadcaster", "tag": "Requires Verification"},
+      "Adani Group PR": {"url": "https://www.adani.com", "type": "Corporate Communications", "tag": "Pro-Group"}
+    }
+  },
+  "validation_rules": {
+    "cross_verification_window_hours": 24,
+    "tier_3_max_score_without_tier1": 0.3,
+    "pro_group_max_score": 0.2,
+    "contradiction_confidence_reduction": 0.5,
+    "single_source_reduction": 0.8,
+    "high_risk_threshold": 0.7,
+    "medium_risk_threshold": 0.4
+  }
+}
