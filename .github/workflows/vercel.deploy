@@ -12,7 +12,7 @@ on:
       - completed
 
 jobs:
-  deploy:
+  trigger-deploy:
     # Run on:
     # 1. Any push to main
     # 2. Successful completion of the cron workflow
@@ -28,23 +28,15 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install Vercel CLI
-        run: npm install --global vercel@latest
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
-      - name: Build Project Artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Deploy to Vercel
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Create empty commit and push
+        run: |
+          git commit --allow-empty -m "chore: trigger Vercel deployment"
+          git push origin main
