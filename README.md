@@ -6,10 +6,6 @@
 - [English](#)
 - [Hindi](README_hindi.md)
 
-## Workflow Status
-
-[![Data Ingestion Cron](https://github.com/cockroachparty/cockroachjanathaparty-agspe/actions/workflows/data-ingestion-cron.yaml/badge.svg)](https://github.com/cockroachparty/cockroachjanathaparty-agspe/actions/workflows/data-ingestion-cron.yaml)
-[![Model Validation](https://github.com/cockroachparty/cockroachjanathaparty-agspe/actions/workflows/model-validation.yaml/badge.svg)](https://github.com/cockroachparty/cockroachjanathaparty-agspe/actions/workflows/model-validation.yaml)
 
 ### Last Run Information
 
