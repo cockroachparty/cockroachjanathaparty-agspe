@@ -53,9 +53,6 @@ jobs:
       - name: Check API Health
         run: |
           echo "Checking API health endpoints..."
-          # Check Reuters API health
-          # Check SEBI filing portal availability
-          # Check SEC EDGAR accessibility
           python -c "
           import httpx
           apis = {
@@ -139,12 +136,30 @@ jobs:
         if: success()
         run: |
           echo "Checking for frontend changes..."
-          # In production, this would trigger a frontend rebuild
-          # if changes are detected in the data layer
           echo "Static assets up to date"
 
       - name: Send Notification
         if: failure()
         run: |
           echo "Data ingestion pipeline failed!"
-          # In production, send alert to monitoring system
+
+  trigger-deploy:
+    needs: data-ingestion
+    if: always()
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create empty commit and push
+        run: |
+          git commit --allow-empty -m "chore: trigger Vercel deployment [data-ingestion-cron]"
+          git push origin main
