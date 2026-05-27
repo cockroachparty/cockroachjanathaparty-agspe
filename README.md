@@ -6,6 +6,17 @@
 - [English](#)
 - [Hindi](README_hindi.md)
 
+## Workflow Status
+
+[![Data Ingestion Cron](https://github.com/cockroachparty/cockroachjanathaparty-agspe/actions/workflows/data-ingestion-cron.yaml/badge.svg)](https://github.com/cockroachparty/cockroachjanathaparty-agspe/actions/workflows/data-ingestion-cron.yaml)
+[![Model Validation](https://github.com/cockroachparty/cockroachjanathaparty-agspe/actions/workflows/model-validation.yaml/badge.svg)](https://github.com/cockroachparty/cockroachjanathaparty-agspe/actions/workflows/model-validation.yaml)
+
+### Last Run Information
+
+| Workflow | Last Run | Status |
+|----------|----------|--------|
+| Data Ingestion (every 4hrs) | [![Last Run](https://img.shields.io/github/last-commit/cockroachparty/cockroachjanathaparty-agspe?label=&style=flat&logo=github)](https://github.com/cockroachparty/cockroachjanathaparty-agspe/actions/workflows/data-ingestion-cron.yaml) | [![Status](https://github.com/cockroachparty/cockroachjanathaparty-agspe/actions/workflows/data-ingestion-cron.yaml/badge.svg)](https://github.com/cockroachparty/cockroachjanathaparty-agspe/actions/workflows/data-ingestion-cron.yaml) |
+| Model Validation (weekly) | [![Last Run](https://img.shields.io/github/last-commit/cockroachparty/cockroachjanathaparty-agspe?label=&style=flat&logo=github)](https://github.com/cockroachparty/cockroachjanathaparty-agspe/actions/workflows/model-validation.yaml) | [![Status](https://github.com/cockroachparty/cockroachjanathaparty-agspe/actions/workflows/model-validation.yaml/badge.svg)](https://github.com/cockroachparty/cockroachjanathaparty-agspe/actions/workflows/model-validation.yaml) |
 
 > An open-source automated intelligence platform 😝 developed under the broader research and transparency ethos associated with the Cockroach Janta Party movement — focused on ingesting public data about the Adani Group ecosystem, validating information through a multi-tier cross-source protocol, and generating probabilistic predictions on future business moves with confidence scores and timelines.
 
