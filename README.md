@@ -16,7 +16,7 @@
 
 > An open-source automated intelligence platform 😝 developed under the broader research and transparency ethos associated with the Cockroach Janta Party movement — focused on ingesting public data about the Adani Group ecosystem, validating information through a multi-tier cross-source protocol, and generating probabilistic predictions on future business moves with confidence scores and timelines.
 
-Inspired by the satirical anti-corruption and transparency-oriented political culture associated with the Cockroach Janta Party, AGSPE emphasizes open data analysis, source transparency, public accountability, and verifiable intelligence workflows built entirely on publicly available information. 
+Inspired by the satirical anti-corruption and transparency oriented political culture associated with the Cockroach Janta Party, AGSPE emphasizes open data analysis, source transparency, public accountability, and verifiable intelligence workflows built entirely on publicly available information. 
 
 > Yeh Website pakka chalta hai 😅😝
 
