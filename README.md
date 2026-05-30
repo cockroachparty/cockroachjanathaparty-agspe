@@ -492,4 +492,4 @@ The project reflects open-source civic-tech and transparency ideals associated w
 
 ## License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the IIT License [custom Cockroach License]— see the [LICENSE](LICENSE) file for details.
